@@ -3,6 +3,10 @@
 	width: 100%;
 }
 
+#title {
+	display: none;
+}
+
 #logo {
 	background-image: url('/img/joe_logo.jpg');
 	width: 200px;

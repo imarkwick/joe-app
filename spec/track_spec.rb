@@ -13,5 +13,4 @@ describe Track do
 			expect(Track.count).to eq(0)
 		end
 	end
-
 end

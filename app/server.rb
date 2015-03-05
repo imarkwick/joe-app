@@ -4,7 +4,7 @@ require 'aws/s3'
 require_relative 'models/track'
 require_relative 'data_mapper_setup'
 
-set :public, Proc.new { File.join(root, "..", "public") }
+set :public_dir, Proc.new { File.join(root, "..", "public") }
 
 get '/' do 
 	erb :index
