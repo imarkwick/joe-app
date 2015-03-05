@@ -1,14 +1,19 @@
 require 'spec_helper'
 
-feature 'User browses the list of tracks' do
+feature 'User opens the app' do
 	
 	before(:each) {
-		Track.create(:title => "Badu")
+		Track.create(:title => "At Your Touch")
 	}
 
-	scenario 'when opening the landing page' do
+	scenario 'on the landing page there is an artist name' do
 		visit '/'
 		expect(page).to have_content('Joe Hertz')
+	end
+
+	scenario 'there is a list of tracks' do
+		visit '/'
+		expect(page).to have_content('At Your Touch')
 	end
 
 end
