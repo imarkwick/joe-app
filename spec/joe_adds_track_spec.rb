@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Joe adds a new track' do
-	scenario 'when opening his personal landing page' do
+	scenario 'when opening his personal admin page' do
 		expect(Track.count).to eq(0)
 		visit '/artist'
 		add_track('At Your Touch')
