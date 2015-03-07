@@ -1,9 +1,8 @@
-require 'spec_helper'
+require 'spec_helper' do
+	
+	describe Track do
 
-describe Track do 
-
-	context 'checking datamapper is working' do
-		it 'should be created and retrieved from the db' do
+		it 'should save and retrieve tracks from the database' do
 			expect(Track.count).to eq(0)
 			Track.create(title: 'At Your Touch')
 			expect(Track.count).to eq(1)

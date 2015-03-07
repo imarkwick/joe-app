@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User opens the app' do
+feature 'User opens the app to see tracks listed' do
 	
 	before(:each) {
 		Track.create(:title => "At Your Touch")
@@ -15,5 +15,4 @@ feature 'User opens the app' do
 		visit '/'
 		expect(page).to have_content('At Your Touch')
 	end
-
 end

@@ -16,4 +16,4 @@ feature 'Joe adds a new track' do
 			click_button 'Add Track'
 		end
 	end
-end	
+end

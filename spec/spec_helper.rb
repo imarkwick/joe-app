@@ -1,6 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 require './app/server'
 require './app/models/track'
+require './app/models/gig'
 require 'database_cleaner'
 require 'capybara/rspec'
 

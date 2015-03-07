@@ -1,0 +1,11 @@
+<div class="row" id="gig-link">
+	<div class="small-12 columns">
+		<ul id="gigs">
+			<% @gigs.each do |gig| %>
+			<li><%= gig.date %></li>
+			<li><%= gig.venue %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+	

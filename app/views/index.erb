@@ -7,15 +7,20 @@
 		</div>
 	</div>
 
-<div class="row">
-  <div class="small-12 columns">
-  	<ul id="tracks">
-  		<% @tracks.each do |track| %>
-  			<li><%= track.title %></li>
-  		<% end %>
-  	</ul>
-  </div>
-</div>
+	<div class="row" id="gig-link">
+		<div class="small-12 columns">
+			<a href="/gigs">Next playing</a>
+		</div>
+	</div>
+	<div class="row">
+	  <div class="small-12 columns">
+	  	<ul id="tracks">
+	  		<% @tracks.each do |track| %>
+	  			<li><%= track.title %></li>
+	  		<% end %>
+	  	</ul>
+	  </div>
+	</div>
 
 	<div class="row" id="track-one">
 	  <div class="small-12 columns">
