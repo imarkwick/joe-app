@@ -1,6 +1,12 @@
-<div class="row" id="gig-link">
+<div class="row" id="gig-header">
 	<div class="small-12 columns">
-		<ul id="gig-listing">
+		<h2>Come party with me...</h2>
+	</div>
+</div>
+
+<div class="row" id="gig-listings">
+	<div class="small-12 columns">
+		<ul id="gig-night">
 			<% @gigs.each do |gig| %>
 			<li><%= gig.date %></li>
 			<li><%= gig.venue %></li>

@@ -83,3 +83,16 @@ ul {
 .threetoggle {
 	background-image: url('/img/tears-clicked.png') !important;
 }
+
+#gig-header {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+#gig-listings {
+	border-radius: 50%;
+	width: 6rem;
+	height: 6rem;
+	border: 2px solid #484848;
+	margin-top: 1rem;
+}
