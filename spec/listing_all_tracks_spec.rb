@@ -3,7 +3,9 @@ require 'spec_helper'
 feature 'User opens the app to see tracks listed' do
 	
 	before(:each) {
-		Track.create(:title => "At Your Touch")
+		Track.create(	:title => "At Your Touch",
+									:tune => "spec/Badu.m4a"
+		)
 	}
 
 	scenario 'on the landing page there is an artist name' do

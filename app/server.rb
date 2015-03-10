@@ -15,7 +15,7 @@ end
 post '/' do
 	title = params["title"]
 	Track.create(:title => title)
-	redirect to('/')
+	redirect '/'
 end
 
 get '/artist' do
