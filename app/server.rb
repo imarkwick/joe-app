@@ -21,23 +21,22 @@ def bucket_list
 	end
 end
 
-def find_file
+def all_track_names
 	s3_connect
-	puts @my_bucket.objects.size
-	@Isolate = @my_bucket['Isolate.mp3']
-	puts @Isolate
+	@my_bucket = AWS::S3::Bucket.find('yo-man')
+	all_tracks = @my_bucket.objects
+	@track_keys = all_tracks.map{ |x| x.key }
 end
 
 get '/' do 
 	s3_connect
 	@tracks = Track.all	
 	@my_bucket = AWS::S3::Bucket.find('yo-man')
-	
-	@my_bucket.each do |object|
-		puts "#{object.key}\t#{object.about['content-length']}\t#{object.about['last-modified']}"
-	end
+	all_track_names
+	# @my_bucket.each do |object|
+	# 	puts "#{object.key}\t#{object.about['content-length']}\t#{object.about['last-modified']}"
+	# end
 
-	find_file
 
 	erb :index
 end
