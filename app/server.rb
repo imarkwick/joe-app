@@ -14,8 +14,26 @@ def s3_connect
 	)
 end
 
+def stream_file
+	s3_connect
+	File.open('@my_bucket', 'wb') do |file|
+		large_object.read do |chunk|
+			file.write(chunk)
+		end
+	end
+end
+
 get '/' do 
-	@tracks = Track.all
+	s3_connect
+	@tracks = Track.all	
+	@my_bucket = AWS::S3::Bucket.find('yo-man')
+	
+	@my_bucket.each do |object|
+		puts "#{object.key}\t#{object.about['content-length']}\t#{object.about['last-modified']}"
+	end
+
+	# stream_file
+
 	erb :index
 end
 
@@ -45,18 +63,5 @@ post '/' do
 	redirect '/'
 end
 
-get '/artist' do
-	erb :artist
-end
-
-get '/gigs' do
-	@gigs = Gig.all
-	erb :gigs
-end
-
-post '/gigs' do
-	date = params["date"]
-	venue = params["venue"]
-	Gig.create(:date => date, :venue => venue)
-	redirect to('/gigs')
-end
+require_relative 'controllers/artist'
+require_relative 'controllers/gigs'

@@ -12,14 +12,13 @@
 			<a href="/gigs">Next playing</a>
 		</div>
 	</div>
+
 	<div class="row">
 	  <div class="small-12 columns">
-	  	<ul id="tracks">
-	  		<% @tracks.each do |track| %>
-	  			<li><%= track.title %></li>
-	  		<% end %>
-	  	</ul>
-	  </div>
+			<% @my_bucket.objects.each do |object| %>
+				<li><%= object.key %></li>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="row" id="track-one">
