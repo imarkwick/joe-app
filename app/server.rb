@@ -14,13 +14,18 @@ def s3_connect
 	)
 end
 
-def stream_file
+def bucket_list
 	s3_connect
-	File.open('@my_bucket', 'wb') do |file|
-		large_object.read do |chunk|
-			file.write(chunk)
-		end
+	AWS::S3::Service.buckets.each do |bucket|
+		puts "#{bucket.name}\t#{bucket.creation_date}"
 	end
+end
+
+def find_file
+	s3_connect
+	puts @my_bucket.objects.size
+	@Isolate = @my_bucket['Isolate.mp3']
+	puts @Isolate
 end
 
 get '/' do 
@@ -32,16 +37,9 @@ get '/' do
 		puts "#{object.key}\t#{object.about['content-length']}\t#{object.about['last-modified']}"
 	end
 
-	# stream_file
+	find_file
 
 	erb :index
-end
-
-def bucket_list
-	s3_connect
-	AWS::S3::Service.buckets.each do |bucket|
-		puts "#{bucket.name}\t#{bucket.creation_date}"
-	end
 end
 
 post '/' do
