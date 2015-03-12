@@ -33,10 +33,6 @@ get '/' do
 	@tracks = Track.all	
 	@my_bucket = AWS::S3::Bucket.find('yo-man')
 	all_track_names
-	# @my_bucket.each do |object|
-	# 	puts "#{object.key}\t#{object.about['content-length']}\t#{object.about['last-modified']}"
-	# end
-
 
 	erb :index
 end
@@ -47,16 +43,16 @@ post '/' do
 	title = params["tune"][:filename]
 	tune = params["tune"][:tempfile]
 	Track.create(:title => title, :tune => tune)
-	File.open('./public/'+title, 'wb') do |f|
-		f.write(tune.read)
-	end
+	# File.open('./public/'+title, 'wb') do |f|
+	# 	f.write(tune.read)
+	# end
 	s3_connect
 	AWS::S3::S3Object.store(
         title,
         tune,
         'yo-man',
         :content_type => 'audio/m4a'
-	)	
+	)
 	redirect '/'
 end
 
