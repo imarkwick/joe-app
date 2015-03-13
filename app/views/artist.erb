@@ -1,9 +1,9 @@
 <div class="row">
-	<div class="small-12 columns">
-		<h2>Joe Hertz</h2>
+  <div class="small-12 columns">
+		<div id="logo">
+		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="small-12 columns">
 		<h4>Adding a track</h4>
@@ -20,6 +20,25 @@
 		    <input type="submit" value="Add Track" name="submit">
 			</form>
 		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns">
+		<h4>All tracks</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<ul>
+			<% @tracks.each do |track| %>
+				<li id="artist-track-list"><h5><%= track.title %></h5>
+					<form>
+						<input name="Submit" type="submit" value="Delete Track">
+					</form>
+				</li>
+			<% end %>
+		</ul>
 	</div>
 </div>
 

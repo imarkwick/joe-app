@@ -1,3 +1,5 @@
+/* LANDING PAGE */
+
 #homepage {
 	height: 100%;
 	width: 100%;
@@ -9,8 +11,8 @@
 
 #logo {
 	background-image: url('/img/joe_logo.jpg');
-	width: 200px;
-	height: 200px;
+	width: 12rem;
+	height: 12rem;
 	margin-left: 12%;
 }
 
@@ -18,7 +20,7 @@
 	text-align: center;
 }
 
-li {
+li #track-list {
 	list-style-type: none;
 	text-align: center;
 	width: 100%;
@@ -29,6 +31,11 @@ li {
 ul {
 	margin-left: 0 !important;
 	line-height: 2.2 !important;
+}
+
+li {
+	list-style-type: none;
+	text-align: center;
 }
 
 .play {
@@ -84,6 +91,8 @@ ul {
 	background-image: url('/img/tears-clicked.png') !important;
 }
 
+/* GIGS PAGE */
+
 #gig-header {
 	text-align: center;
 	margin-top: 1rem;
@@ -95,4 +104,22 @@ ul {
 	height: 6rem;
 	border: 2px solid #484848;
 	margin-top: 1rem;
+}
+
+/* ARTIST PAGE */
+
+h4 {
+	text-align: center;
+	border: 1px solid #686868;
+	margin-top: 1rem;
+	margin-bottom: 0.6rem;
+	margin-left: 20%;
+	width: 60%;
+	background-color: #202020;
+	color: #F8F8F8;
+	font-size: 1.4rem;
+}
+
+#new-gig {
+	margin-bottom: 1rem;
 }
