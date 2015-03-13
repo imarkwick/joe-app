@@ -57,11 +57,5 @@ post '/' do
 	redirect '/'
 end
 
-get '/artist/:id' do
-	remove_track = Track.get(params[:id])
-	remove_track.destroy
-	redirect '/artist'
-end
-
 require_relative 'controllers/artist'
 require_relative 'controllers/gigs'
