@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'User opens the app to see tracks listed' do
 	
 	before(:each) {
-		Track.create(	:title => "At Your Touch",
+		Track.create(	:title => "Badu",
 									:tune => "spec/Badu.m4a"
 		)
 	}
@@ -15,6 +15,6 @@ feature 'User opens the app to see tracks listed' do
 
 	scenario 'there is a list of tracks' do
 		visit '/'
-		expect(page).to have_content('At Your Touch')
+		expect(page).to have_content('Badu')
 	end
 end

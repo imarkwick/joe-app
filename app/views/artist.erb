@@ -33,9 +33,7 @@
 		<ul>
 			<% @tracks.each do |track| %>
 				<li id="artist-track-list"><h5><%= track.title %></h5>
-					<form>
-						<input name="Submit" type="submit" value="Delete Track">
-					</form>
+				<a href='/artist/<%= track.id %>'>Delete Track</a>
 				</li>
 			<% end %>
 		</ul>

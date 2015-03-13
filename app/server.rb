@@ -5,6 +5,8 @@ require_relative 'models/track'
 require_relative 'models/gig'
 require_relative 'data_mapper_setup'
 
+enable :sessions
+set :session_secret, 'super secret'
 set :public_dir, Proc.new { File.join(root, "..", "public") }
 
 def s3_connect
@@ -53,6 +55,12 @@ post '/' do
         :content_type => 'audio/m4a'
 	)
 	redirect '/'
+end
+
+get '/artist/:id' do
+	remove_track = Track.get(params[:id])
+	remove_track.destroy
+	redirect '/artist'
 end
 
 require_relative 'controllers/artist'
