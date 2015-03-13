@@ -38,8 +38,8 @@ end
 
 post '/' do
 	bucket = 'yo-man'
-	track_name = params["title"]
-	title = params["tune"][:filename]
+	title = params["title"]
+	filename = params["tune"][:filename]
 	tune = params["tune"][:tempfile]
 	Track.create(:title => title, :tune => tune)
 	# File.open('./public/'+title, 'wb') do |f|
