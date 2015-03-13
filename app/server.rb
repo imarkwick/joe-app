@@ -33,7 +33,6 @@ get '/' do
 	@tracks = Track.all	
 	@my_bucket = AWS::S3::Bucket.find('yo-man')
 	all_track_names
-
 	erb :index
 end
 
