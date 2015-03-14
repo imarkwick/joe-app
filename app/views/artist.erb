@@ -58,3 +58,19 @@
 		</div>
 	</div>
 </div>
+
+<div class="row">
+	<div class="small-12 columns">
+		<h4>All gigs</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<ul>
+			<% @gigs.each do |gig| %>
+				<li id="artist-gig-list">
+					<p><strong><%= gig.venue %></strong>        <%= gig.date %></p>
+					<a href='/artist/gig/<%= gig.id %>'>Delete Gig</a>
+				</li>
+			<% end %>
+		</ul>

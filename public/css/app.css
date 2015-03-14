@@ -101,11 +101,17 @@ li {
 }
 
 #gig-listings {
+	width: 6rem;
+	height: 6rem;
+}
+
+#gig-night {
 	border-radius: 50%;
 	width: 6rem;
 	height: 6rem;
 	border: 2px solid #484848;
 	margin-top: 1rem;
+	padding: 0.5rem;
 }
 
 /* ARTIST PAGE */

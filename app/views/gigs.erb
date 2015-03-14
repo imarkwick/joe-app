@@ -6,10 +6,12 @@
 
 <div class="row" id="gig-listings">
 	<div class="small-12 columns">
-		<ul id="gig-night">
+		<ul>
 			<% @gigs.each do |gig| %>
-			<li><%= gig.date %></li>
-			<li><%= gig.venue %></li>
+			<li id="gig-night">
+				<%= gig.date %>
+				<a href="<%= gig.url %>"><%= gig.venue %></a>
+			</li>
 			<% end %>
 		</ul>
 	</div>
