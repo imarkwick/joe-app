@@ -4,6 +4,7 @@ require './app/models/track'
 require './app/models/gig'
 require 'database_cleaner'
 require 'capybara/rspec'
+require_relative './helpers/helper'
 
 Capybara.app = Sinatra::Application
 

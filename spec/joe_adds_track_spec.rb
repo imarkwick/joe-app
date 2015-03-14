@@ -13,7 +13,7 @@ feature 'Joe adds a new track' do
 	def add_track(title)
 		within('#new-track') do
 			fill_in 'title', :with => title
-			attach_file('[tune][tempfile]', 'spec/Badu.m4a')
+			attach_file('fileToUpload', 'spec/Badu.m4a')
 			click_button 'Add Track'
 		end
 	end
