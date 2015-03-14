@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'User opens the app to see gig dates' do 
 
 	before(:each) {
-		Gig.create(:venue => "XOYO", :date => "15.04.15")
+		Gig.create(:venue => "XOYO", :date => "15.04.15", :url => "www.xoyo.co.uk")
 	}
 
 	scenario 'on the landing page there is a button that says gigs' do

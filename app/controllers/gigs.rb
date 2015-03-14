@@ -6,6 +6,10 @@ end
 post '/gigs' do
 	date = params["date"]
 	venue = params["venue"]
-	Gig.create(:date => date, :venue => venue)
+	url = params["url"]
+	Gig.create(	:date => date, 
+							:venue => venue, 
+							:url => url
+						)
 	redirect to('/gigs')
 end
