@@ -9,8 +9,8 @@
 		<ul>
 			<% @gigs.each do |gig| %>
 			<li id="gig-night">
-				<%= gig.date %>
-				<a href="<%= gig.url %>"><%= gig.venue %></a>
+				<%= gig.date %><br>
+				<a id="venue" href="<%= gig.url %>"><%= gig.venue %></a>
 			</li>
 			<% end %>
 		</ul>

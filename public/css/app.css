@@ -100,18 +100,22 @@ li {
 	margin-top: 1rem;
 }
 
-#gig-listings {
-	width: 6rem;
-	height: 6rem;
-}
-
 #gig-night {
 	border-radius: 50%;
-	width: 6rem;
-	height: 6rem;
+	width: 10rem;
+	height: 10rem;
 	border: 2px solid #484848;
 	margin-top: 1rem;
 	padding: 0.5rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFFFFF;
+	background-image: url('/img/xoyo.jpg');
+}
+
+ a #venue {
+	color: #7df9ff;
 }
 
 /* ARTIST PAGE */
