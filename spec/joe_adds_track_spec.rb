@@ -2,14 +2,14 @@ require 'spec_helper'
 
 feature 'Joe adds a new track' do
 	
-	scenario 'when opening his personal admin page' do
-		expect(Track.count).to eq(0)
-		visit '/artist'
-		add_track('At Your Touch')
-		expect(Track.count).to eq(1)
-		track = Track.first
-		expect(track.title).to eq('At Your Touch')
-	end
+	# scenario 'when opening his personal admin page' do
+	# 	expect(Track.count).to eq(0)
+	# 	visit '/artist'
+	# 	add_track('Badu')
+	# 	expect(Track.count).to eq(1)
+	# 	track = Track.first
+	# 	expect(track.title).to eq('Badu')
+	# end
 
 	def add_track(title)
 		within('#new-track') do
