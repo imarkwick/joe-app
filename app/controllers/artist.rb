@@ -6,12 +6,17 @@ end
 
 get '/artist/:id' do
 	remove_track = Track.get(params[:id])
-	remove_track.destroy
+	track_title = Track.get(params[:title])
+	if remove_track.destroy
+		flash[:notice] = "Track deleted"
+	end
 	redirect '/artist'
 end
 
 get '/artist/gig/:id' do
 	remove_gig = Gig.get(params[:id])
-	remove_gig.destroy
+	if remove_gig.destroy
+		flash[:notice] = "Gig deleted"
+	end
 	redirect '/artist'
 end

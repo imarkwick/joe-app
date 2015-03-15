@@ -11,11 +11,4 @@ feature 'Joe adds a new track' do
 	# 	expect(track.title).to eq('Badu')
 	# end
 
-	def add_track(title)
-		within('#new-track') do
-			fill_in 'title', :with => title
-			attach_file('fileToUpload', 'spec/Badu.m4a')
-			click_button 'Add Track'
-		end
-	end
 end
