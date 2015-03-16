@@ -9,7 +9,7 @@ end
 post '/' do
 	bucket = 'yo-man'
 	title = params["title"]
-	filename = params["tune"][:filename]
+	# filename = params["tune"][:filename]
 	tune = params["tune"][:tempfile]
 	Track.create(:title => title, :tune => tune)
 	s3_connect

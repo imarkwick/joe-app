@@ -10,11 +10,11 @@
     <script src="js/vendor/modernizr.js"></script>
   </head>
 	<body>
-    <%= yield %>
-
     <% if flash[:notice] %>
       <div id="notice"><%= flash[:notice] %></div>
     <% end %>
+
+    <%= yield %>
 
 	  <script src="js/vendor/jquery.js"></script>
 	  <script src="js/foundation/foundation.js"></script>
