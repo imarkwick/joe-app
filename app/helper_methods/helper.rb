@@ -24,3 +24,17 @@ def save_file_to_public
 		f.write(tune.read)
 	end
 end
+
+def psql_track_names
+	tracks = Track.all
+	track_titles = [] 
+	tracks.each do |track|
+		track_titles << track.title
+	end
+	return track_titles
+end
+
+def select_aws_file(title)
+	track_title = all_track_names.select { |track| track == title }
+	track_title.join("")
+end

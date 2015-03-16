@@ -6,8 +6,11 @@ end
 
 get '/artist/:id' do
 	remove_track = Track.get(params[:id])
-	track_title = Track.get(params[:title])
+	track_title = remove_track.title
+	bucket = 'yo-man'
+	s3_connect
 	if remove_track.destroy
+		AWS::S3::S3Object.delete(track_title, bucket)
 		flash[:notice] = "Track deleted"
 	end
 	redirect '/artist'
