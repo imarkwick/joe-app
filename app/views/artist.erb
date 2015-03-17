@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row" id="track-form">
 	<div class="small-12 columns">
 		<div id="file-upload">
 			<form action="/" method="post" enctype="multipart/form-data" name="track" id="new-track">
@@ -25,12 +25,12 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h4>All tracks</h4>
+		<h4 class="artist-listing">All tracks</h4>
 	</div>
 </div>
 <div class="row">
-	<div class="small-12 columns">
-		<ul>
+	<div class="small-6 columns">
+		<ul id="tracks-uploaded">
 			<% @tracks.each do |track| %>
 				<li id="artist-track-list"><h5><%= track.title %></h5>
 				<a href='/artist/<%= track.id %>'>Delete Track</a>
@@ -61,7 +61,7 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h4>All gigs</h4>
+		<h4 class="artist-listing">All gigs</h4>
 	</div>
 </div>
 <div class="row">

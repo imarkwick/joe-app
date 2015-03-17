@@ -1,8 +1,5 @@
 get '/gigs' do
 	@gigs = Gig.all
-
-	# @date = Gig.all.get(params[:id])
-
 	erb :gigs
 end
 

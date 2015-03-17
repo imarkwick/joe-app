@@ -34,7 +34,14 @@ def psql_track_names
 	return track_titles
 end
 
-def select_aws_file(title)
-	track_title = all_track_names.select { |track| track == title }
-	track_title.join("")
+def find_aws_file(title)
+	s3_connect
+	track = AWS::S3::S3Object.find(title, 'yo-man')
+	return track
 end
+
+def last_modified
+	
+end
+
+
