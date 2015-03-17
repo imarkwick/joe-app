@@ -10,3 +10,8 @@ $(document).ready(function() {
 	});
 });
 
+var spinner = function(){
+ $('.sk-spinner-wandering-cubes').show();
+ $('.artist').css("opacity", ".6");
+}
+
