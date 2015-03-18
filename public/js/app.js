@@ -11,8 +11,8 @@ $(document).ready(function() {
 });
 
 var spinner = function(){
- $('.sk-spinner-wandering-cubes').show();
- $('.artist').css("opacity", ".6");
+	$('.sk-spinner-wandering-cubes').show();
+	$('.artist').css("opacity", ".6");
 }
 
 $("audio").on("play", function(){
@@ -23,4 +23,25 @@ $("audio").on("play", function(){
   });
 });
 
+var audio = (document).getElementsByTagName('audio');
 
+var run = function() {
+  for (var i = 0; i < audio.length; i++) {
+   	var obj = audio[i]
+   	obj.play();
+   	console.log(obj);
+  };
+}
+
+$('audio').bind('ended', function() {
+	// audio[1].play();
+	var i = 0
+	if (i < audio.length) {
+		i++ 
+	  console.log(i);
+	}
+	// audio[i].play();
+
+  // audio[i].play();
+ 	// }
+});
