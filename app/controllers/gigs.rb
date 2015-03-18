@@ -1,5 +1,5 @@
 get '/gigs' do
-	@gigs = Gig.all
+	gigs = Gig.all
 	erb :gigs
 end
 
