@@ -26,22 +26,17 @@ $("audio").on("play", function(){
 var audio = (document).getElementsByTagName('audio');
 
 var run = function() {
-  for (var i = 0; i < audio.length; i++) {
-   	var obj = audio[i]
-   	obj.play();
-   	console.log(obj);
-  };
+	// for (i = 0; len = audio.length; i < len; i++) {
+	// 	track = audio[i];
+	// 	console.log(i);
+	// }
 }
 
 $('audio').bind('ended', function() {
-	// audio[1].play();
-	var i = 0
-	if (i < audio.length) {
-		i++ 
-	  console.log(i);
+	for (i = 1; i < audio.length; i++) {
+		track = audio[i];
+		track.play();
+		console.log(i);
 	}
-	// audio[i].play();
-
-  // audio[i].play();
- 	// }
 });
+
