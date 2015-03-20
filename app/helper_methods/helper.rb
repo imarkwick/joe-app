@@ -49,10 +49,14 @@ def sort_by_date
 	dates_array.sort_by{ |d| d,m,y=d.split("-");[y,m,d] }
 end
 
-def delete_old
-	
+def all_gig_dates
+	gigs = Gig.all
+	gig_dates = []
+	gigs.each do |gig|
+		gig_dates << gig.date
+	end
+	gig_dates
 end
-
 
 
 

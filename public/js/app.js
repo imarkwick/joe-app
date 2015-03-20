@@ -24,6 +24,7 @@ $("audio").on("play", function(){
 });
 
 var audio = (document).getElementsByTagName('audio');
+// onend
 
 var run = function() {
 	// for (i = 0; len = audio.length; i < len; i++) {
