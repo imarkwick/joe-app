@@ -8,16 +8,15 @@ end
 
 post '/' do
 	bucket = 'yo-man'
-	title = params["title"]
 	# filename = params["tune"][:filename]
+	title = params["title"]
 	tune = params["tune"][:tempfile]
-	Track.create(:title => title, :tune => tune)
-	s3_connect
-	AWS::S3::S3Object.store(
-        title,
-        tune,
-        'yo-man',
-        :content_type => 'audio/m4a'
-	)
-	redirect '/'
+	@track = Track.new(:title => title, :tune => tune)
+	if @track.save
+		save_file_to_aws(title, tune)
+		redirect '/', flash[:notice] = "Track added"
+	else
+		flash[:notice] = "Something's up with the file upload. Please make sure all fields are filled out."
+		redirect '/artist'
+	end
 end

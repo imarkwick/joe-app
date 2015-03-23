@@ -6,4 +6,6 @@ class Track
 	property :title,	String
 	property :tune,		String
 
+	validates_presence_of :title, :tune
+
 end

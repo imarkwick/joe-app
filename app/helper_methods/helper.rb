@@ -25,6 +25,16 @@ def save_file_to_public
 	end
 end
 
+def save_file_to_aws(title, file)
+	s3_connect
+	AWS::S3::S3Object.store(
+	      title,
+	      file,
+	      'yo-man',
+	      :content_type => 'audio/m4a'
+	)
+end
+
 def psql_track_names
 	tracks = Track.all
 	track_titles = [] 

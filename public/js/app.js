@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 var spinner = function(){
 	$('.sk-spinner-wandering-cubes').show();
-	$('.artist').css("opacity", ".6");
+	$('.artist').css("opacity", ".5");
 }
 
 $("audio").on("play", function(){
