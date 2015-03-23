@@ -7,4 +7,6 @@ class Gig
 	property :date,		String
 	property :url,		String
 
+	validates_presence_of :venue, :date, :url
+
 end
