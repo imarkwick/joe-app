@@ -40,19 +40,17 @@ def find_aws_file(title)
 	return track
 end
 
-def sort_by_date
-	dates = Gig.all
+def sort_by_date(array)
 	dates_array = []
-	dates.each do |gig|
+	array.each do |gig|
 		dates_array << gig.date
 	end
 	dates_array.sort_by{ |d| d,m,y=d.split("-");[y,m,d] }
 end
 
-def all_gig_dates
-	gigs = Gig.all
+def all_gig_dates(array)
 	gig_dates = []
-	gigs.each do |gig|
+	array.each do |gig|
 		gig_dates << gig.date
 	end
 	gig_dates

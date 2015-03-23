@@ -5,10 +5,10 @@ feature 'Joe add a new gig date' do
 	scenario 'when opening his personal admin page' do
 		expect(Gig.count).to eq(0)
 		visit '/artist'
-		add_gig("15.04.15", "XOYO", "www.xoyo.co.uk")
+		add_gig("15-04-15", "XOYO", "www.xoyo.co.uk")
 		expect(Gig.count).to eq(1)
 		gig = Gig.first
-		expect(gig.date).to eq("15.04.15")
+		expect(gig.date).to eq("15-04-2015")
 		expect(gig.venue).to eq("XOYO")
 	end
 
