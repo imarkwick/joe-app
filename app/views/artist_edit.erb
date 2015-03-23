@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="small-12 columns">
+		Edit <%= @track.title %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns">
+		<div id='track-edit'>
+			<form action="/artist_edit/<%= @track.id %>" method="post" enctype="multipart/form-data" name="track" id="new-track">
+				Title: <input type="text" name="title" autocomplete="off">
+				Select track to upload:
+				<input type="file" name="tune" id="fileToUpload">
+		    <input type="submit" value="Save changes" name="submit" onclick="spinner()" id="trackuploading">
+			</form>
+		</div>
+	</div>
+</div>

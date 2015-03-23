@@ -44,6 +44,7 @@
 			<ul id="tracks-uploaded">
 				<% @tracks.each do |track| %>
 					<li id="artist-track-list"><h5><%= track.title %></h5>
+					<a href='/artist_edit/<%= track.id %>'>Edit</a></br>
 					<a href='/artist/<%= track.id %>'>Delete Track</a>
 					</li>
 				<% end %>

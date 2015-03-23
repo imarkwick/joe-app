@@ -8,7 +8,6 @@ end
 
 post '/' do
 	bucket = 'yo-man'
-	# filename = params["tune"][:filename]
 	title = params["title"]
 	tune = params["tune"][:tempfile]
 	@track = Track.new(:title => title, :tune => tune)
