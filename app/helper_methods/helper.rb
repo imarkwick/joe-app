@@ -59,5 +59,3 @@ def all_gig_dates(array)
 	gig_dates
 end
 
-
-
