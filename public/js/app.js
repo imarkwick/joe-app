@@ -23,6 +23,21 @@ $(document).ready(function() {
 	});
 });
 
+if(audioSupport.duration > 0 && !audioSupport.paused){
+
+    //already playing
+    audioSupport.pause();
+    audioSupport.currentTime = 0;
+    audioSupport.play();
+
+}else{
+
+    //not playing
+
+    audioSupport.play();    
+
+}
+
 var tracks = (document).getElementsByTagName('audio');
 
 var trackArray = Array.prototype.slice.call(tracks)
