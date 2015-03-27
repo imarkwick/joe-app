@@ -22,6 +22,13 @@
 	text-align: center;
 }
 
+.pauseButton {
+	display: none;
+	background-color: black;
+}
+
+/* MOCK FRONTEND */
+
 li #track-list {
 	list-style-type: none;
 	text-align: center;
@@ -67,20 +74,12 @@ li {
 	border-top: 1px solid #484848;
 }
 
-.onetoggle {
-	background-image: url('/img/at-your-touch-clicked.png') !important;
-}
-
 #track-two {
 	background-image: url('/img/isolate.png');	
 	width: 318px;
 	height: 112px;
 	border-top: 1px solid #484848;
 	border-bottom: 1px solid #484848;
-}
-
-.twotoggle {
-	background-image: url('/img/isolate-clicked.png') !important;
 }
 
 #track-three {

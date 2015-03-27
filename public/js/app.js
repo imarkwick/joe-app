@@ -1,49 +1,55 @@
 $(document).ready(function() {
-	// $('#track-one').click(function() {
-	// 	$(this).toggleClass('onetoggle');
-	// });
-	// $('#track-two').click(function() {
-	// 	$(this).toggleClass('twotoggle');
-	// });
-	// $('#track-three').click(function() {
-	// 	$(this).toggleClass('threetoggle');
-	// });
 
-	var spinner = function(){
+	var spinner = function() {
 		$('.sk-spinner-wandering-cubes').show();
 		$('.artist').css("opacity", ".5");
-	}
+	};
 
-	$("audio").on("play", function(){
+	$("audio").on("play", function() {
 	  var _this = $(this);
-	  $("audio").each(function(i,el){
+	  $("audio").each(function(i,el) {
 	    if(!$(el).is(_this))
 	    $(el).get(0).pause();
 	  });
 	});
 });
 
-if(audioSupport.duration > 0 && !audioSupport.paused){
+var tracks = document.getElementsByTagName('audio');
+var trackArray = Array.prototype.slice.call(tracks);
 
-    //already playing
-    audioSupport.pause();
-    audioSupport.currentTime = 0;
-    audioSupport.play();
-
-}else{
-
-    //not playing
-
-    audioSupport.play();    
-
-}
-
-var tracks = (document).getElementsByTagName('audio');
-
-var trackArray = Array.prototype.slice.call(tracks)
+var element = document.getElementById('Tears');
+var otherElement = document.getElementById('PausedTears');
 
 var startNext = function(position) {
 	//check in here if this is last track
 	//if it is, loop back to start
 	trackArray[position + 1].play();
 }
+
+function playTune(position) { 
+	track = trackArray[position]
+	trackArray[position].play();
+	element.style.display = 'none';
+	otherElement.style.display = 'inline-block';
+	console.log(track);
+};
+
+function pauseTune(position) {
+	trackToPause = trackArray[position]
+	trackToPause.pause();
+	otherElement.style.display = 'none';
+	element.style.display = 'inline-block';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
