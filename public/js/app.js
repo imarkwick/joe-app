@@ -21,22 +21,26 @@ var startNext = function(position) {
 	//check in here if this is last track
 	//if it is, loop back to start
 	trackArray[position + 1].play();
-}
+};
+
+function isPlaying(position) {
+	var track = trackArray[position];
+	return !track.paused;
+};
 
 function playTune(position) { 
 	var track = trackArray[position];
-	trackArray[position].play();
+	track.play();
 	
 	var play = track.className;
 	var pause = 'Paused' + play;
-
 	var element = document.getElementById(play);
 	var otherElement = document.getElementById(pause);
 
 	element.style.display = 'none';
 	otherElement.style.display = 'inline-block';
 
-	console.log(findPosition());
+	console.log(isPlaying(position));
 };
 
 function pauseTune(position) {
@@ -45,21 +49,11 @@ function pauseTune(position) {
 
 	var play = track.className;
 	var pause = 'Paused' + play;
-
 	var element = document.getElementById(play);
 	var otherElement = document.getElementById(pause);
 	
-	
 	otherElement.style.display = 'none';
 	element.style.display = 'inline-block';
-}
-
-
-
-
-
-
-
-
+};
 
 

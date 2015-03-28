@@ -1,6 +1,9 @@
 get '/artist' do
 	@tracks = Track.all
 	@gigs = Gig.all
+	@gigs.each do |gig|
+		gig.destroy if Date.parse(gig.date) < Date.today
+	end
 	erb :artist
 end
 
