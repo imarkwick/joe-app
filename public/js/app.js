@@ -17,9 +17,6 @@ $(document).ready(function() {
 var tracks = document.getElementsByTagName('audio');
 var trackArray = Array.prototype.slice.call(tracks);
 
-var element = document.getElementById('Tears');
-var otherElement = document.getElementById('PausedTears');
-
 var startNext = function(position) {
 	//check in here if this is last track
 	//if it is, loop back to start
@@ -27,22 +24,35 @@ var startNext = function(position) {
 }
 
 function playTune(position) { 
-	track = trackArray[position]
+	var track = trackArray[position];
 	trackArray[position].play();
+	
+	var play = track.className;
+	var pause = 'Paused' + play;
+
+	var element = document.getElementById(play);
+	var otherElement = document.getElementById(pause);
+
 	element.style.display = 'none';
 	otherElement.style.display = 'inline-block';
-	console.log(track);
+
+	console.log(findPosition());
 };
 
 function pauseTune(position) {
-	trackToPause = trackArray[position]
-	trackToPause.pause();
+	var track = trackArray[position]
+	track.pause();
+
+	var play = track.className;
+	var pause = 'Paused' + play;
+
+	var element = document.getElementById(play);
+	var otherElement = document.getElementById(pause);
+	
+	
 	otherElement.style.display = 'none';
 	element.style.display = 'inline-block';
 }
-
-
-
 
 
 
