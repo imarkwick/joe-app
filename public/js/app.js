@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 	$("audio").on("play", function() {
 	  var _this = $(this);
+	  var pauseButton = $('.pauseButton');
 	  $("audio").each(function(i,el) {
 	    if(!$(el).is(_this))
 	    $(el).get(0).pause();
@@ -23,37 +24,47 @@ var startNext = function(position) {
 	trackArray[position + 1].play();
 };
 
-function isPlaying(position) {
+function isPlaying() {
+	for (i = 0; i < trackArray.length; i++) {
+		if (trackArray[i].paused) {
+			console.log(trackArray[i]);
+			stylePaused(trackArray[i]);
+		};
+	};
+};
+
+function whenPlaying(position) {
 	var track = trackArray[position];
-	return !track.paused;
+	var play = track.className;
+	var pause = 'Paused' + play;
+	var element = document.getElementById(play);
+	var otherElement = document.getElementById(pause);
+	track.onplaying = function() {
+		element.style.display = 'none';
+		otherElement.style.display = 'inline-block';
+		isPlaying();
+	};
 };
 
 function playTune(position) { 
 	var track = trackArray[position];
 	track.play();
-	
-	var play = track.className;
-	var pause = 'Paused' + play;
-	var element = document.getElementById(play);
-	var otherElement = document.getElementById(pause);
-
-	element.style.display = 'none';
-	otherElement.style.display = 'inline-block';
-
-	console.log(isPlaying(position));
+	whenPlaying(position);
 };
 
-function pauseTune(position) {
-	var track = trackArray[position]
+function hitPause(position) {
+	var track = trackArray[position];
 	track.pause();
+	stylePaused(track);
+};
 
+function stylePaused(track) {
 	var play = track.className;
 	var pause = 'Paused' + play;
 	var element = document.getElementById(play);
 	var otherElement = document.getElementById(pause);
-	
-	otherElement.style.display = 'none';
-	element.style.display = 'inline-block';
+	if (track.paused) {
+		otherElement.style.display = 'none';
+		element.style.display = 'inline-block';
+	}
 };
-
-
