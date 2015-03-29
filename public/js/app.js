@@ -27,7 +27,6 @@ var startNext = function(position) {
 function isPlaying() {
 	for (i = 0; i < trackArray.length; i++) {
 		if (trackArray[i].paused) {
-			console.log(trackArray[i]);
 			stylePaused(trackArray[i]);
 		};
 	};
