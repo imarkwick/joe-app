@@ -11,12 +11,13 @@ get '/artist/:id' do
 	remove_track = Track.get(params[:id])
 	track_title = remove_track.title
 	bucket = 'yo-man'
-	aws_file = find_aws_file(track_title)
 	s3_connect
 	remove_track.destroy
 	if AWS::S3::S3Object.exists? track_title, bucket
 		AWS::S3::S3Object.delete(track_title, bucket)
 		flash[:notice] = "Track deleted"
+	else 
+		flash[:notice] = "Track was not uploaded properly"
 	end
 	redirect '/artist'
 end

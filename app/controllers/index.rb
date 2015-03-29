@@ -11,7 +11,8 @@ post '/' do
 	title = params["title"]
 	tune = params["tune"][:tempfile]
 	@track = Track.new(:title => title, :tune => tune)
-	if @track.save && save_file_to_aws(title, tune)
+	if @track.save
+		save_file_to_aws(title, tune)
 		redirect '/', flash[:notice] = "Track added"
 	else
 		flash[:notice] = "Something's up with the file upload. Please make sure all fields are filled out."
