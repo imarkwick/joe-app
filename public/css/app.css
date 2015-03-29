@@ -39,8 +39,10 @@ li {
 
 .name {
 	line-height: 112px;
-	font-size: 22px;
-	color: white;
+	font-size: 26px;
+	font-weight: 100;
+	color: #FF8300;
+	letter-spacing: 2px;
 }
 
 .pauseButton {
