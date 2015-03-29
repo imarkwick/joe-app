@@ -1,8 +1,18 @@
 /* LANDING PAGE */
+body {
+	background-image: url('/img/joe_opaque.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  background-position: center;
+}
 
 li {
 	list-style-type: none;
 	text-align: center;
+}
+
+ul {
+	margin-left: auto;
 }
 
 #homepage {
@@ -15,12 +25,13 @@ li {
 }
 
 #logo {
-	background-image: url('/img/joe_logo.jpg');
+	background-image: url('/img/cutout_logo.png');
 	width: 12rem;
 	height: 12rem;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	z-index: 10;
 }
 
 #gig-link {
@@ -30,42 +41,42 @@ li {
 
 .playButton {
 	background-image: url('/img/soundwave2_1.png');
-	width: 318px;
+	width: 300px;
 	height: 112px;
 	border-top: 1px solid #484848;
 	margin-left: auto;
 	margin-right: auto;
+	color: #000040;
 }
 
 .name {
 	line-height: 112px;
 	font-size: 26px;
 	font-weight: 100;
-	color: #FF8300;
 	letter-spacing: 2px;
+	color: #FF8300;
 }
 
 .pauseButton {
 	display: none;
-	background-image: url('/img/tears-clicked.png');
-	width: 318px;
+	background-image: url('/img/soundwave_paused.png');
+	width: 300px;
 	height: 112px;
 	border-top: 1px solid #484848;
 	margin-left: auto;
 	margin-right: auto;
+	font-weight: 200;
 }
 
 @media (max-width: 320px) {
 	.playButton {
-		width: 300px;
-		margin-left: -20px;
+		margin-left: -2px;
 	} 
 }
 
 @media (max-width: 320px) {
 	.pauseButton {
-		width: 300px;
-		margin-left: -20px;
+		margin-left: -2px;
 	} 
 }
 
@@ -83,15 +94,96 @@ li {
 	border: 2px solid #484848;
 	margin-top: 1rem;
 	padding: 0.5rem;
+	padding-top: 2.4rem;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	color: #FFFFFF;
 	background-image: url('/img/xoyo.jpg');
+	z-index: 20;
+	font-weight: 100;
 }
 
-a #venue {
-	color: #7df9ff;
+a#venue {
+	color: #6666b2;
+}
+
+a {
+	color: #000066;
+	font-weight: 150;
+}
+
+a:hover {
+  color: #6666b2;
+}
+
+/* PULSING DIV */
+#container {
+	margin-left: auto;
+	margin-right: auto;
+  position: relative;
+}
+
+.dot {
+	margin-left: auto;
+	margin-right: auto;
+  border: 10px solid #fff601;
+  background: transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  height: 11rem;
+  width: 11rem;
+  -webkit-animation: pulse 2s ease-out;
+  -moz-animation: pulse 2s ease-out;
+  animation: pulse 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  z-index: 10;
+  opacity: 0;
+}
+
+@-moz-keyframes pulse {
+ 65% {
+    -moz-transform: scale(0.3);
+    opacity: 0.4;	
+ }
+ 75% {
+    -moz-transform: scale(0.5);
+    opacity: 0.5;
+ }
+ 90% {
+    -moz-transform: scale(0.7);
+    opacity: 0.7;
+ }
+ 100% {
+    -moz-transform: scale(1);
+    opacity: 0.0;
+ }
+}
+
+@-webkit-keyframes "pulse" {
+ 0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0;
+ }
+ 25% {
+    -webkit-transform: scale(0);
+    opacity: 0.1;
+ }
+ 50% {
+    -webkit-transform: scale(0.1);
+    opacity: 0.3;
+ }
+ 75% {
+    -webkit-transform: scale(0.5);
+    opacity: 0.5;
+ }
+ 100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+ }
 }
 
 /* ARTIST PAGE */
