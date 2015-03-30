@@ -7,7 +7,7 @@ get '/artist' do
 	erb :artist
 end
 
-get '/artist/:id' do
+get '/artist/delete/:id' do
 	remove_track = Track.get(params[:id])
 	track_title = remove_track.title
 	bucket = 'yo-man'
@@ -54,15 +54,20 @@ post '/artist/edit/gig/:id' do
 	end
 end
 
+get '/new_artist' do
+	erb :new_artist
+end
 
-
-
-
-
-
-
-
-
+post '/artist' do
+	name = params["name"]
+	email = params["email"]
+	password = params["password"]
+	@user = User.create(:name => params[:name], 
+											:email => params[:email], 
+											:password => params[:password])
+	session[:user_id] = @user.id
+	redirect '/artist'
+end
 
 
 

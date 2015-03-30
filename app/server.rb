@@ -5,6 +5,7 @@ require 'rack-flash'
 require 'date'
 require_relative 'models/track'
 require_relative 'models/gig'
+require_relative 'models/user'
 require_relative 'data_mapper_setup'
 require_relative 'helper_methods/helper.rb'
 
@@ -13,6 +14,6 @@ set :session_secret, 'super secret'
 use Rack::Flash
 set :public_dir, Proc.new { File.join(root, "..", "public") }
 
-require_relative 'controllers/index'
 require_relative 'controllers/artist'
+require_relative 'controllers/index'
 require_relative 'controllers/gigs'

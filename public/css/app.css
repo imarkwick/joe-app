@@ -123,6 +123,12 @@ h2 {
 	background-image: url('/img/xoyo.jpg');
 	z-index: 20;
 	font-weight: 100;
+	opacity: 0.6;
+}
+
+#gig-night:hover {
+	opacity: 0.9;
+	transition: opacity .25s ease-in-out;
 }
 
 a#venue {
@@ -131,7 +137,7 @@ a#venue {
 
 a {
 	color: #000066;
-	font-weight: 150;
+	font-weight: 200;
 }
 
 a:hover {
@@ -253,6 +259,16 @@ h4 {
 #new-gig {
 	margin-bottom: 1rem;
 }
+
+/* ARTIST ADMIN */
+
+/*#sign-up {
+	font-weight: 100;
+	letter-spacing: 2px;
+	margin-top: 2rem;
+	color: #FF0000;
+}*/
+
 
 /* EDIT A GIG PAGE */
 
