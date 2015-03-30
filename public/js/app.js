@@ -21,6 +21,11 @@ $(document).ready(function() {
 	})
 });
 
+// document.addEventListener('touchstart', function() {
+// 	document.getElementsByTagName('audio').play();
+// 	document.getElementsByTagName('audio').pause();	
+// });
+
 var tracks = document.getElementsByTagName('audio');
 var trackArray = Array.prototype.slice.call(tracks);
 

@@ -9,6 +9,7 @@ body {
 	background-attachment: fixed;
   background-position: center;
   z-index: 10;
+  height: 100%;
 }
 
 .gig-background {
@@ -20,6 +21,12 @@ body {
   height: 100%;
 }
 
+@media (max-width: 320px) {
+	.gig-background {
+		margin-top: -1rem;
+	} 
+}
+
 li {
 	list-style-type: none;
 	text-align: center;
@@ -29,11 +36,13 @@ ul {
 	margin-left: auto;
 }
 
-h4 {
-	font-weight: 100;
-	letter-spacing: 2px;
+#welcome {
 	margin-top: 2rem;
-	color: white;
+	text-align: center;
+}
+
+#welcome p {
+	display: none;
 }
 
 #title {
@@ -133,6 +142,12 @@ h2 {
 	transition: opacity .25s ease-in-out;
 }
 
+@media (max-width: 320px) {
+	#gig-night {
+		opacity: 0.9;
+	} 
+}
+
 a#venue {
 	color: #6666b2;
 }
@@ -221,12 +236,15 @@ h4 {
 	text-align: center;
 	margin-top: 1rem;
 	margin-bottom: 0.6rem;
-	margin-left: 20%;
+	margin-left: auto;
+	margin-right: auto;
 	width: 60%;
 	background-color: #F80000;
 	color: #F8F8F8;
 	font-size: 1.4rem;
 	opacity: 0.9;
+	font-weight: 100;
+	letter-spacing: 2px;
 }
 
 @media (max-width: 320px) {
