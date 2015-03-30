@@ -1,13 +1,14 @@
 def add_gig(date, venue, url)
-	within('#new-gig') do
+	within('#new-event') do
 		fill_in 'date', :with => date
 		fill_in 'venue', :with => venue
 		fill_in 'url', :with => url
-		click_button 'Add Gig'
+		click_button 'Add Event'
 	end
 end
 
 def add_track(title)
+	sign_in(email, password)
 	within('#new-track') do
 		fill_in 'title', :with => title
 		attach_file('fileToUpload', 'spec/Badu.m4a')

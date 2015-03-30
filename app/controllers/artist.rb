@@ -56,6 +56,3 @@ post '/artist/edit/gig/:id' do
 	end
 end
 
-
-
-

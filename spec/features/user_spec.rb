@@ -29,7 +29,7 @@ feature 'Signing in and out: ' do
 	scenario 'signs in with correct login details' do
 		visit '/artist'
 		expect(page).not_to have_content('Hey Joe Man')
-		visit 'artist_sessions'
+		visit '/artist_session'
 		sign_in('j@t.com', 'test')
 		expect(page).to have_content('Hey Joe Man')
 	end
@@ -37,13 +37,13 @@ feature 'Signing in and out: ' do
 	scenario 'signs in with incorrect credentials' do
 		visit '/artist'
 		expect(page).not_to have_content('Hey Joe Man')
-		visit 'artist_sessions'
+		visit '/artist_session'
 		sign_in('j@t.com', 'wrong')
 		expect(page).not_to have_content('Hey Joe Man')
 	end
 
 	scenario 'while being signed in' do
-		visit 'artist_sessions'
+		visit '/artist_session'
 		sign_in('j@t.com', 'test')
 		click_button 'Log out'
 		expect(page).not_to have_content('Hey Joe Man')
