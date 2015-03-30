@@ -45,7 +45,6 @@
 				<ul id="tracks-uploaded">
 					<% @tracks.each do |track| %>
 						<li id="artist-track-list"><h5><%= track.title %></h5>
-						<a href='/artist_edit/<%= track.id %>'>Edit</a></br>
 						<a href='/artist/<%= track.id %>'>Delete Track</a>
 						</li>
 					<% end %>
@@ -63,7 +62,7 @@
 			<div class="small-12 columns">
 				<div id="new-gig">
 					<form action="/gigs" method="post">
-						Date: <input type="date" name="date" autocomplete="off">
+						Date: <input type="date" required name="date" autocomplete="off">
 						Venue: <input type="text" name="venue" autocomplete="off">
 						URL: <input type="url" name="url" autocomplete="off">
 						<input type="submit" value="Add Gig">
@@ -83,8 +82,9 @@
 					<% @gigs.each do |gig| %>
 						<li id="artist-gig-list">
 							<p><strong><%= gig.venue %></strong>        <%= gig.date %></p>
+							<a href='/artist/edit/gig/<%= gig.id %>'>Edit Gig</a>
 							<a href='/artist/gig/<%= gig.id %>'>Delete Gig</a>
-						</li>
+						</li><br>
 					<% end %>
 				</ul>
 			</div>

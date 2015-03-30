@@ -29,3 +29,40 @@ get '/artist/gig/:id' do
 	end
 	redirect '/artist'
 end
+
+get '/artist/edit/gig/:id' do
+	@gig = Gig.get(params[:id])
+	erb :artist_edit
+end
+
+post '/artist/edit/gig/:id' do
+	altered_event = Gig.get(params[:id])
+	updated_date = params["date"]
+	date_object = Date.parse(updated_date)
+	new_date = date_object.strftime('%d-%m-%Y')
+	new_venue = params["venue"]
+	new_url = params["url"]
+	if altered_event.update(:date => new_date,
+												:venue => new_venue,
+												:url => new_url
+		)	
+		flash[:notice] = "Event updated"
+		redirect '/artist'
+	else 
+		flash[:notice] = "Please make sure all fields are filled out"
+		# redirect :artist_edit
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

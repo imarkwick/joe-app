@@ -16,4 +16,3 @@ set :public_dir, Proc.new { File.join(root, "..", "public") }
 require_relative 'controllers/index'
 require_relative 'controllers/artist'
 require_relative 'controllers/gigs'
-require_relative 'controllers/artist_edit'
