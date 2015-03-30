@@ -9,12 +9,14 @@ body {
 	background-attachment: fixed;
   background-position: center;
   z-index: 10;
-  /*background-size: 100%;*/
-  /*margin-top: -20px;*/
 }
 
 .gig-background {
 	background-image: url('/img/joe_berlin.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  background-position: center;
+  z-index: 10;
   height: 100%;
 }
 
@@ -262,6 +264,25 @@ h4 {
 
 /* ARTIST ADMIN */
 
+.login-header {
+	text-align: center;
+}
+
+#sign-in {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sign-up {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#links {
+	text-align: center;
+}
 
 /* EDIT A GIG PAGE */
 
