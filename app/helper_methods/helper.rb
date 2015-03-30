@@ -68,4 +68,11 @@ def sort_by_date(array)
 	dates_array.sort_by{ |d| d,m,y=d.split("-");[y,m,d] }
 end
 
+def delete_past_events
+	gigs = Gig.all
+	@gigs.each do |gig|
+		gig.destroy if Date.parse(gig.date) < Date.today
+	end
+end
+
 

@@ -12,6 +12,7 @@ require_relative 'helper_methods/helper.rb'
 enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
+use Rack::MethodOverride
 set :public_dir, Proc.new { File.join(root, "..", "public") }
 
 require_relative 'controllers/artist'

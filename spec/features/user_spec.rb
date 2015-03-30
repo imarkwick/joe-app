@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Joe signs up' do 
+feature 'Signing up' do 
 
 	scenario 'when trying to make a login' do
 		visit '/new_artist'
@@ -17,7 +17,7 @@ feature 'Joe signs up' do
 	end
 end
 
-feature 'Joe signs in' do
+feature 'Signing in and out: ' do
 
 	before(:each) do
 		User.create(:name => 'Joe',
@@ -26,24 +26,27 @@ feature 'Joe signs in' do
 								:password_confirmation => 'test')
 	end
 
-	scenario 'with correct login details' do
+	scenario 'signs in with correct login details' do
 		visit '/artist'
 		expect(page).not_to have_content('Hey Joe Man')
+		visit 'artist_sessions'
 		sign_in('j@t.com', 'test')
 		expect(page).to have_content('Hey Joe Man')
 	end
 
-	scenario 'with incorrect credentials' do
+	scenario 'signs in with incorrect credentials' do
 		visit '/artist'
 		expect(page).not_to have_content('Hey Joe Man')
+		visit 'artist_sessions'
 		sign_in('j@t.com', 'wrong')
 		expect(page).not_to have_content('Hey Joe Man')
 	end
 
-	def sign_in(email, password)
-		visit 'sessions/new'
-		fill_in 'email', :with => email
-		fill_in 'password', :with => password
-		click_button 'Log in'
+	scenario 'while being signed in' do
+		visit 'artist_sessions'
+		sign_in('j@t.com', 'test')
+		click_button 'Log out'
+		expect(page).not_to have_content('Hey Joe Man')
 	end
+
 end

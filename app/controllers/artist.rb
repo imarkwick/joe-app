@@ -1,10 +1,12 @@
 get '/artist' do
-	@tracks = Track.all
-	@gigs = Gig.all
-	@gigs.each do |gig|
-		gig.destroy if Date.parse(gig.date) < Date.today
+	if current_user
+		@tracks = Track.all
+		@gigs = Gig.all
+		delete_past_events
+		erb :artist
+	else
+		redirect '/artist_session'
 	end
-	erb :artist
 end
 
 get '/artist/delete/:id' do

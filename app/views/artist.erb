@@ -18,6 +18,10 @@
 		  <div class="small-12 columns">
 			  <% if current_user %>
 			  	<p>Hey <%= @current_user.name %> Man</p>
+			  	<form method="post" action="/sessions">
+				  	<input type="hidden" name="_method" value="delete">
+				  	<input type="submit" value="Log out">
+			  	</form>
 			  <% end %>
 		  </div>
 		</div>

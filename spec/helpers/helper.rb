@@ -27,3 +27,12 @@ def sign_up(name = "Joe",
 		click_button 'Create Login'
 	end
 end
+
+def sign_in(email, password)
+	within('#sign-in') do
+		visit 'artist_sessions'
+		fill_in 'email', :with => email
+		fill_in 'password', :with => password
+		click_button 'Log in'
+	end
+end

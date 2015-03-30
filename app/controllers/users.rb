@@ -17,7 +17,7 @@ post '/artist' do
 	end
 end
 
-get '/sessions/new' do
+get '/artist_session' do
 	erb :artist_session
 end
 
@@ -31,4 +31,10 @@ post '/sessions' do
 		flash[:notice] = "Email or password is incorrect"
 		erb :artist_session
 	end
+end
+
+delete '/sessions' do
+	flash[:notice] = "Ciao"
+	session[:user_id] = nil
+	redirect '/'
 end
