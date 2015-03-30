@@ -13,11 +13,12 @@ $(document).ready(function() {
 	    $(el).get(0).pause();
 	  });
 	});
-});
 
-document.addEventListener('touchstart', function() {
-	document.getElementsByTagName('audio').play();
-	document.getElementsByTagName('audio').pause();	
+	$(function() {
+		$('.name').bind("touchstart", function() {
+			$('audio').play();
+		})
+	})
 });
 
 var tracks = document.getElementsByTagName('audio');
