@@ -49,8 +49,8 @@ post '/artist/edit/gig/:id' do
 		flash[:notice] = "Event updated"
 		redirect '/artist'
 	else 
-		flash[:notice] = "Please make sure all fields are filled out"
-		# redirect :artist_edit
+		flash[:notice] = "UPDATE FAILED. Please try again and make sure all fields are filled out"
+		redirect '/artist'
 	end
 end
 
