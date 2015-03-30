@@ -1,5 +1,5 @@
 
-# ARTIST
+# ARTIST ADMIN
 
 
 def current_user
