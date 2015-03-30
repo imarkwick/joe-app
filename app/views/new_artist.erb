@@ -7,7 +7,7 @@
 	<div class="small-12 columns">
 		<form action="/artist" method="post" id="sign-up">
 			<input name="name" type="text" placeholder="Name">
-			Email: <input name="email" type="email">
+			Email: <input name="email" type="email" value="<%= @user.email %>">
 			Password: <input name="password" type="password">
 			Password confirmation: <input name="password_confirmation" type="password">
 			<input type="submit" value="Create Login">
