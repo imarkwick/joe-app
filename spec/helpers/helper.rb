@@ -14,3 +14,16 @@ def add_track(title)
 		click_button 'Add Track'
 	end
 end
+
+def sign_up(name = "Joe",
+						email = "joe@example.com",
+						password = "orange",
+						password_confirmation = "orange")
+	within('#sign-up') do
+		fill_in :name, 	:with => name
+		fill_in :email, :with => email
+		fill_in :password, :with => password
+		fill_in :password_confirmation, :with => password_confirmation
+		click_button 'Create Login'
+	end
+end
