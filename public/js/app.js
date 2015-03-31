@@ -1,10 +1,5 @@
 $(document).ready(function() {
 
-	var spinner = function() {
-		$('.sk-spinner-wandering-cubes').show();
-		$('.artist').css("opacity", ".5");
-	};
-
 	$("audio").on("play", function() {
 	  var _this = $(this);
 	  var pauseButton = $('.pauseButton');
@@ -33,6 +28,11 @@ var startNext = function(position) {
 	//check in here if this is last track
 	//if it is, loop back to start
 	trackArray[position + 1].play();
+};
+
+var spinner = function() {
+	$('.sk-spinner-wandering-cubes').show();
+	$('.artist').css("opacity", ".5");
 };
 
 function isPlaying() {
