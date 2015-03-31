@@ -9,17 +9,17 @@ $(document).ready(function() {
 	  });
 	});
 
-	$(function() {
-		$('.name').bind("touchstart", function() {
-			$('audio').play();
-		})
-	})
 });
 
-// document.addEventListener('touchstart', function() {
-// 	document.getElementsByTagName('audio').play();
-// 	document.getElementsByTagName('audio').pause();	
-// });
+function playAudio() {
+	var audio = new Audio();
+	if (typeof Audio != "undefined") {
+		console.log('Playing Audio using HTML5...');
+		audio.addEventListener('canplay', function() {
+		});
+		audio.play();
+	};
+};
 
 var tracks = document.getElementsByTagName('audio');
 var trackArray = Array.prototype.slice.call(tracks);
@@ -42,6 +42,15 @@ function isPlaying() {
 		};
 	};
 };
+
+// function loadTracks() {
+// 	for (i = 0; i < trackArray.length; i++) {
+// 		trackArray[0].load();
+// 		trackArray[0].onloadeddata = function() {
+// 			alert("loaded track");
+// 		};
+// 	};
+// };
 
 function whenPlaying(position) {
 	var track = trackArray[position];
