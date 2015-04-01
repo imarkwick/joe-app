@@ -35,8 +35,8 @@ function isPlaying() {
 
 function loadTracks() {
 	for (i = 0; i < tracks.length; i++) {
-		tracks[0].load();
-		tracks[0].onloadeddata = function() {
+		tracks[i].load();
+		tracks[i].onloadeddata = function() {
 			alert("loaded track");
 		};
 	};
