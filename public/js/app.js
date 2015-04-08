@@ -18,6 +18,10 @@ var startNext = function(position) {
 	//check in here if this is last track
 	//if it is, loop back to start
 	trackArray[position + 1].play();
+	// if (position === trackArray.length) {
+	// 	trackArray[0].play();
+	// } else {
+	// }
 };
 
 var spinner = function() {
