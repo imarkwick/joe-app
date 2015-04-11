@@ -15,13 +15,11 @@ var tracks = document.getElementsByTagName('audio');
 var trackArray = Array.prototype.slice.call(tracks);
 
 var startNext = function(position) {
-	//check in here if this is last track
-	//if it is, loop back to start
-	trackArray[position + 1].play();
-	// if (position === trackArray.length) {
-	// 	trackArray[0].play();
-	// } else {
-	// }
+	if (position === trackArray.length - 1) {
+		trackArray[0].play();
+	} else {
+		trackArray[position + 1].play();
+	}
 };
 
 var spinner = function() {
