@@ -8,7 +8,6 @@ $(document).ready(function() {
 	    $(el).get(0).pause();
 	  });
 	});
-
 });
 
 var tracks = document.getElementsByTagName('audio');

@@ -1,10 +1,11 @@
 /* LANDING PAGE */
+
 body {
-	background-image: url('/img/textured.jpg');
+	/*background-image: url('/img/textured.jpg');*/
 }
 
 .background-img {
-	background-image: url('/img/joe_opaque.png');
+	/*background-image: url('/img/joe_opaque.png');*/
 	background-repeat: no-repeat;
 	background-attachment: fixed;
   background-position: center;
@@ -88,15 +89,37 @@ ul {
 	color: #FF8300;
 }
 
+p#track-title {
+	z-index: 200;
+	position: absolute;
+	line-height: 112px;
+	font-size: 30px;
+	font-weight: 200;
+	letter-spacing: 2px;
+	color: #FF8300;
+}
+
 .pauseButton {
 	display: none;
-	background-image: url('/img/soundwave_paused.png');
+	/*position: relative;*/
+	/*background-image: url('/img/soundwave_paused.png');*/
 	width: 300px;
 	height: 112px;
 	border-top: 1px solid #484848;
 	margin-left: auto;
 	margin-right: auto;
 	font-weight: 200;
+}
+
+canvas { 
+	display: block; 
+	z-index: 100;
+	position: relative;
+	height: 110px;
+	width: 100%;
+	color: blue;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media (max-width: 320px) {
