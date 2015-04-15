@@ -15,9 +15,10 @@ var trackArray = Array.prototype.slice.call(tracks);
 
 var startNext = function(position) {
 	if (position === trackArray.length - 1) {
-		trackArray[0].play();
+		playTune(0);
 	} else {
-		trackArray[position + 1].play();
+		playTune(position + 1);
+		console.log(position);
 	}
 };
 
