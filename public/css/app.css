@@ -20,7 +20,7 @@ body {
 }
 
 .gig-background {
-	background-image: url('/img/joe_berlin.png');
+	/*background-image: url('/img/joe_berlin.png');*/
 	background-repeat: no-repeat;
 	background-attachment: fixed;
   background-position: center;
